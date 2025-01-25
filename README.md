@@ -14,4 +14,6 @@
 
 ### Said dog in question:
 
+![Loki](https://drive.google.com/uc?export=view&id=17kMhFbVsOmn1Df-EpgRsbY0s_QCe_H0y)
+
 
