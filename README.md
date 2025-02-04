@@ -12,6 +12,10 @@
 - Skiing Biking and Hiking
 - Tinkering on my computer 
 
+## Why I came to McCourt 
+- I came to McCourt because of Franck Wiebe who convinced me of the analytic rigor of the MIDP
+- One of my bosses at the time also got his Phd at Georgetown in Political Science and pushed me to take advantage of the wonderful professional network the Univeristy could provide. 
+
 ### Said dog in question:
 
 ![Loki](https://drive.google.com/uc?export=view&id=17kMhFbVsOmn1Df-EpgRsbY0s_QCe_H0y)
