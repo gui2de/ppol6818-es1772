@@ -1,0 +1,53 @@
+<h1><a href="#simulation-study-fixed-vs-infinite-superpopulation" id="simulation-study-fixed-vs-infinite-superpopulation">Simulation Study: Fixed vs. Infinite Superpopulation</a></h1>
+<h2><a href="#overview" id="overview"><strong>Overview</strong></a></h2>
+<p>We create a simple <strong>data generating process (DGP)</strong> in which:<br />
+- <code>X</code> is drawn from a normal distribution: ( X \sim N(0,1) )<br />
+- <code>error</code> is drawn from a normal distribution.<br />
+- The outcome variable is generated as:<br />
+[ Y = 2X + error ] - This DGP is <strong>identical</strong> in both parts of the study.</p>
+<h2><a href="#part-1-sampling-from-a-fixed-population" id="part-1-sampling-from-a-fixed-population"><strong>Part 1: Sampling from a Fixed Population</strong></a></h2>
+<p>Here, <strong>sampling noise</strong> is introduced <strong>only</strong> due to random draws from a fixed dataset of 10,000 individuals.</p>
+<p>(simulate: sim_fixed)</p>
+<p>(13,000 real changes made)</p>
+<p>(10,000 observations deleted)</p>
+<h3><a href="#histogram-of-beta-estimates-finite-population" id="histogram-of-beta-estimates-finite-population"><strong>Histogram of Beta Estimates (Finite Population)</strong></a></h3>
+<p>. histogram beta if fin == 1, by(sample_size) name(beta_finite, replace)</p>
+<p><img src="fig_beta_finite.svg" height="400" alt="Beta Distribution - Finite Population" ></p>
+<h3><a href="#summary-statistics-finite-population" id="summary-statistics-finite-population"><strong>Summary Statistics (Finite Population)</strong></a></h3>
+<p>Summary statistics: Mean Group variable: sample_size</p>
+<h2><a href="#sample-size-beta-sem-pvalue-10-2028413-3545535-0031999100-1999547-1028508-215e-281000-1999711-0321245-010000-1999519-0101464-0-total-2006798-1249188-0008" id="sample-size-beta-sem-pvalue-10-2028413-3545535-0031999100-1999547-1028508-215e-281000-1999711-0321245-010000-1999519-0101464-0-total-2006798-1249188-0008">sample_size |      beta       sem    pvalue &mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; 10 |  2.028413  .3545535  .0031999 100 |  1.999547  .1028508  2.15e-28 1000 |  1.999711  .0321245         0 10000 |  1.999519  .0101464         0 &mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; Total |  2.006798  .1249188     .0008</a></h2>
+<h2><a href="#part-2-sampling-from-an-infinite-superpopulation" id="part-2-sampling-from-an-infinite-superpopulation"><strong>Part 2: Sampling from an Infinite Superpopulation</strong></a></h2>
+<p>Here, each replication draws from an entirely <strong>new dataset</strong>, representing an <strong>infinite</strong> superpopulation.</p>
+<p>As expected, <strong>standard errors (SE)</strong> and <strong>confidence intervals (CI widths)</strong> <strong>shrink as N increases</strong>.</p>
+<h3><a href="#histogram-of-beta-estimates-infinite-superpopulation" id="histogram-of-beta-estimates-infinite-superpopulation"><strong>Histogram of Beta Estimates (Infinite Superpopulation)</strong></a></h3>
+<p>. histogram beta if fin == 0, by(sample_size) name(beta_infinite, replace)</p>
+<p><img src="fig_beta_infinite.svg" height="400" alt="Beta Distribution - Infinite Superpopulation" ></p>
+<h3><a href="#summary-statistics-infinite-superpopulation" id="summary-statistics-infinite-superpopulation"><strong>Summary Statistics (Infinite Superpopulation)</strong></a></h3>
+<p>Summary statistics: Mean Group variable: sample_size</p>
+<h2><a href="#sample-size-beta-sem-pvalue-4-1688837-3245027-03499358-1611786-632024-043479110-2161029-4050121-000697716-1875561-1985752-189e-0732-2009262-1718558-107e-1264-1900435-1391581-236e-20100-2104402-10598-402e-36128-1879525-0854942-0256-2010153-0623596-0512-2001355-0445745-01000-2050527-0298108-01024-2000215-0299654-02048-2002115-0227124-04096-2002847-0156586-08192-1983195-0112066-010000-1985734-0100954-016384-2016072-007827-032768-2011066-0054821-065536-19985-0039158-0100000-2002419-0031568-0131072-2001638-0027567-0262144-1997597-0019535-0524288-1999333-0013814-01000000-1999234-0009988-01048576-1999353-0009753-02097152-200182-0006907-0-total-1972847-0891586-003045" id="sample-size-beta-sem-pvalue-4-1688837-3245027-03499358-1611786-632024-043479110-2161029-4050121-000697716-1875561-1985752-189e-0732-2009262-1718558-107e-1264-1900435-1391581-236e-20100-2104402-10598-402e-36128-1879525-0854942-0256-2010153-0623596-0512-2001355-0445745-01000-2050527-0298108-01024-2000215-0299654-02048-2002115-0227124-04096-2002847-0156586-08192-1983195-0112066-010000-1985734-0100954-016384-2016072-007827-032768-2011066-0054821-065536-19985-0039158-0100000-2002419-0031568-0131072-2001638-0027567-0262144-1997597-0019535-0524288-1999333-0013814-01000000-1999234-0009988-01048576-1999353-0009753-02097152-200182-0006907-0-total-1972847-0891586-003045">sample_size |      beta       sem    pvalue &mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; 4 |  1.688837  .3245027  .0349935 8 |  1.611786   .632024  .0434791 10 |  2.161029  .4050121  .0006977 16 |  1.875561  .1985752  1.89e-07 32 |  2.009262  .1718558  1.07e-12 64 |  1.900435  .1391581  2.36e-20 100 |  2.104402    .10598  4.02e-36 128 |  1.879525  .0854942         0 256 |  2.010153  .0623596         0 512 |  2.001355  .0445745         0 1000 |  2.050527  .0298108         0 1024 |  2.000215  .0299654         0 2048 |  2.002115  .0227124         0 4096 |  2.002847  .0156586         0 8192 |  1.983195  .0112066         0 10000 |  1.985734  .0100954         0 16384 |  2.016072   .007827         0 32768 |  2.011066  .0054821         0 65536 |    1.9985  .0039158         0 100000 |  2.002419  .0031568         0 131072 |  2.001638  .0027567         0 262144 |  1.997597  .0019535         0 524288 |  1.999333  .0013814         0 1000000 |  1.999234  .0009988         0 1048576 |  1.999353  .0009753         0 2097152 |   2.00182  .0006907         0 &mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; Total |  1.972847  .0891586   .003045</a></h2>
+<hr />
+<h2><a href="#comparing-fixed-vs-infinite-sampling" id="comparing-fixed-vs-infinite-sampling"><strong>Comparing Fixed vs. Infinite Sampling</strong></a></h2>
+<p>When sampling from a <strong>fixed population</strong> at <code>N = 10,000</code>, the <strong>variation in estimates is limited</strong> by the finite underlying variability of the dataset.</p>
+<p>In contrast, the <strong>infinite superpopulation</strong> case exhibits a smoother trend as <code>N</code> grows.</p>
+<h3><a href="#density-plot-finite-vs-infinite" id="density-plot-finite-vs-infinite"><strong>Density Plot: Finite vs. Infinite</strong></a></h3>
+<p>. twoway (kdensity beta if fin == 1, lcolor(blue)) ///</p>
+<blockquote>
+<pre><code>   (kdensity beta if fin == 0, lcolor(red)), ///
+   legend(order(1 &quot;Fixed Population&quot; 2 &quot;Superpopulation&quot;)) ///
+   title(&quot;Distribution of Estimated Beta&quot;) xtitle(&quot;Beta&quot;) ytitle(&quot;Density&quot;) ///
+   name(beta_density, replace)
+</code></pre>
+</blockquote>
+<p><img src="fig_beta_density.svg" height="400" alt="Beta Density Comparison" ></p>
+<p>Below we can compare the mean overall values between the infinite and finite population</p>
+<p>Summary statistics: Mean Group variable: fin</p>
+<pre><code> fin |      beta       sem    pvalue
+</code></pre>
+<h2><a href="#-0-1972847-0891586-0030451-2006798-1249188-0008-total-1977373-0939266-0027457" id="-0-1972847-0891586-0030451-2006798-1249188-0008-total-1977373-0939266-0027457">&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; 0 |  1.972847  .0891586   .003045 1 |  2.006798  .1249188     .0008 &mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; Total |  1.977373  .0939266  .0027457</a></h2>
+<h2><a href="#conclusion" id="conclusion"><strong>Conclusion</strong></a></h2>
+<ul>
+<li>The <strong>infinite superpopulation</strong> has <strong>smaller standard errors and tighter confidence intervals</strong> as <code>N</code> increases.</li>
+<li>The <strong>finite population</strong> has more erratic estimates at <strong>small sample sizes</strong> due to <strong>sampling constraints</strong>.</li>
+<li>Larger sample sizes <strong>reduce confidence interval width</strong>, improving precision.</li>
+</ul>
+<hr />
