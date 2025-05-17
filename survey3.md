@@ -1,0 +1,3 @@
+Here is the link to the survey to fill out on surveyCTO: https://gui2de.surveycto.com/collect/es1772_form_v1?caseid=
+Here is the link to the xlsx form: https://docs.google.com/spreadsheets/d/1Waak6Q6X3ARwtqdrYXkeaF37YDY791VjUBVSn0k1sKo/edit?usp=sharing
+I have uploaded the results of the ietestform: the outstanding issues are not issues. First its not reading correctly that they will be integer values and not strings for TEST: NON NUMERIC NAME VALUES. Then for TEST: NON-REQUIRED NON-NOTE TYPE FIELD I have to let you skip otherwise you can't complete the survey on a computer as it will not be able to send an sms. 
